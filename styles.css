@@ -1,14 +1,34 @@
 body {
-  background-color: #60d9f1;
-  width: 1000px;
+  background-color: #ffd481;
+  width: 100%;
   display:flex;
+  font-family: 'Bevan', cursive;
+  margin: 0px;
+
+}
+
+header{
+  background-image:url("https://s-media-cache-ak0.pinimg.com/originals/02/a2/86/02a286b1f48309099dca00188ea56628.jpg");
+  background-size:100%;
+  background-position: left;
+  color: white;
+  text-align: center;
+  padding: 50px 50px;
+  margin: 0px 0px auto 0px;
+  /*position: absolute;*/
+}
+
+.container{
+  width:100%;
 }
 h1{
   text-align: center;
 }
+
 .player{
   text-align: center;
 }
+
 .search-bar{
   text-align: center;
   border-top: 2px solid black;
@@ -16,14 +36,25 @@ h1{
   margin: 20px;
 }
 #search-box{
-  width: 400px;
+  width: 300px;
+  margin: 10px auto;
 }
+
 .results {
+  text-align:center;
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+
 }
 
 .results div{
   width: 20%;
+}
+
+p{
+  font-size: 0.8em;
 }
