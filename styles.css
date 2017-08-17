@@ -53,6 +53,16 @@ h1{
 #search-box{
   width: 300px;
   margin: 10px auto;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  font-size: 1.2em;
+  border-radius: 3px;
+}
+
+#search-button{
+  font-size:1.1em;
+  border-radius: 3px;
+  background-color: #f9f9ff;
 }
 
 .results {

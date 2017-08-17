@@ -1,14 +1,4 @@
-/*
-  Here is a rough idea for the steps you could take:
-*/
 
-// 1. First select and store the elements you'll be working with
-      //song title, band name, audio file, album thumbnail
-// 2. Create your `submit` event for getting the user's search term
-// 3. Create your `fetch` request that is called after a submission
-// 4. Create a way to append the fetch results to your page
-// 5. Create a way to listen for a click that will play the song in the audio play
-  //on click, add the preview url to the src attribute in the audio tag?
 
 
 //create global variables
@@ -16,8 +6,6 @@ let results = document.querySelector('.results');
 let audio = document.querySelector('audio');
 let searchButton= document.querySelector('#search-button');
 let searchBox = document.querySelector('#search-box');
-// let musicPlayer = document.querySelector('.music-player');
-let preview = '';
 
 //event listener that will commence the fetch
   searchButton.addEventListener("click", function(){
@@ -33,7 +21,10 @@ let preview = '';
   //convert the JSON data
     function convertData(data){
       return data.json();
+
     }
+
+
 
   //print the data to verify we were able to retrieve the information.
     function printData(data){
@@ -42,10 +33,15 @@ let preview = '';
 
           const song = data.results[i];
           //create the HTML elements
-          const containerDiv = document.createElement('div');
-          const p = document.createElement('p');
-          const h4 = document.createElement('h4');
-          const img = document.createElement('img');
+          let containerDiv = document.createElement('div');
+          let p = document.createElement('p');
+          let h4 = document.createElement('h4');
+          let img = document.createElement('img');
+
+          // if there are currently results in the results node, remove them
+          // if (results.firstChild !== true){
+          //   results.removeChild(containerDiv);
+          // };
 
           //fill the HTML elements with iTunes data
           img.src = song.artworkUrl100;
@@ -62,6 +58,7 @@ let preview = '';
         };
           console.log(data);
 
+
   }
   //When a song is clicked, the preview will play through the audio player
 
@@ -70,6 +67,7 @@ let preview = '';
 
     while (original !== null) {
 
+      //if the element is a div, give me the div
       if (original.tagName === "DIV") {
         return original;
       }
@@ -97,7 +95,6 @@ let preview = '';
       let playingBox = document.querySelector('#playing');
       playingBox.textContent = `Now playing: ${artistName} - ${songName}`;
 
-        // audio.src = songPreview;
 
       }
 
