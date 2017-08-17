@@ -53,6 +53,7 @@ let preview = '';
           h4.textContent = `${song.artistName}`;
           containerDiv.setAttribute("data_src", `${song.previewUrl}`);
 
+          //attach HTML elements created in JS to index.html
           results.appendChild(containerDiv);
           containerDiv.appendChild(img);
           containerDiv.appendChild(p);
@@ -86,12 +87,18 @@ let preview = '';
 
       if (div !== null) {
    // make the preview url the src for the audio tag
-
       let songPreview = div.getAttribute("data_src");
 
-        audio.src = songPreview;
+      audio.src = songPreview;
+    //find the name of the song and artist and create a textbox uder the audio box to designate what song is playing.
+      let songName = div.querySelector('p').textContent;
+      let artistName = div.querySelector('h4').textContent;
 
-        // console.log(artistName);
+      let playingBox = document.querySelector('#playing');
+      playingBox.textContent = `Now playing: ${artistName} - ${songName}`;
+
+        // audio.src = songPreview;
+
       }
 
 });
